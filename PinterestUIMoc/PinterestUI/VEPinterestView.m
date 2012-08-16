@@ -16,15 +16,15 @@ static NSUInteger const _pinterestViewLineCount = 3;
 static NSInteger const _pinterestViewTagHeaderView = -1;
 
 @interface VEPinterestView ()
-- (void)_initialize;
-- (UIView *)_sectionHeaderViewAtSection:(NSUInteger)section;
-- (void)_configureCell:(UIView *)cell atIndexPath:(NSIndexPath *)indexPath;
-- (void)_didSelectCell:(UITapGestureRecognizer *)tapGestureRecognizer;
-- (void)_didLongPressCell:(UILongPressGestureRecognizer *)longPressGestureRecognizer;
+- (void)initializePinterestView;
+- (UIView *)sectionHeaderViewAtSection:(NSUInteger)section;
+- (void)configureCell:(UIView *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)didSelectCell:(UITapGestureRecognizer *)tapGestureRecognizer;
+- (void)didLongPressCell:(UILongPressGestureRecognizer *)longPressGestureRecognizer;
 
-NSUInteger _shortestLine(CGFloat lineHeight[], NSUInteger lineCount);
-NSUInteger _longestLine(CGFloat lineHeight[], NSUInteger lineCount);
-CGSize _fitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
+NSUInteger VEPinterestViewShortestLine(CGFloat lineHeight[], NSUInteger lineCount);
+NSUInteger VEPinterestViewLongestLine(CGFloat lineHeight[], NSUInteger lineCount);
+CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 @end
 
 @implementation VEPinterestView
@@ -37,12 +37,12 @@ CGSize _fitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self _initialize];
+        [self initializePinterestView];
     }
     return self;
 }
 
-- (void)_initialize {
+- (void)initializePinterestView {
 	
 	_selectedIndexPath = nil;
 }
@@ -68,7 +68,7 @@ CGSize _fitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 
 	for (NSUInteger section = 0; section < sectionCount; section++) {
 	
-		UIView *sectionHeaderView = [self _sectionHeaderViewAtSection:section];
+		UIView *sectionHeaderView = [self sectionHeaderViewAtSection:section];
 		
 		CGRect headerViewRect = sectionHeaderView.frame;
 		headerViewRect.origin.y += sectionHeight;
@@ -89,9 +89,9 @@ CGSize _fitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 			
 			NSIndexPath *indexPath = [NSIndexPath indexPathForRow:cellIndex inSection:section];
 			CGSize cellSize = [self.datasource sizeOfCellInPinterestView:self atIndexPath:indexPath];
-			cellSize = _fitCellSizeToLineWidth(cellSize, lineWidth);
+			cellSize = VEPinterestViewFitCellSizeToLineWidth(cellSize, lineWidth);
 			
-			NSUInteger shortestLineIndex = _shortestLine(lineHeight, _pinterestViewLineCount);
+			NSUInteger shortestLineIndex = VEPinterestViewShortestLine(lineHeight, _pinterestViewLineCount);
 				
 			CGRect cellBackgroundRect;
 			cellBackgroundRect.origin.x = shortestLineIndex * lineWidth + cellMargin - 1.0f;
@@ -113,7 +113,7 @@ CGSize _fitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 			UIView *cell = [[UIView alloc] initWithFrame:cellRect];
 			cell.tag = indexPath.row;
 			
-			[self _configureCell:cell atIndexPath:indexPath];
+			[self configureCell:cell atIndexPath:indexPath];
 			
 			[cellBackgroundView addSubview:cell];
 			[cell release];
@@ -124,7 +124,7 @@ CGSize _fitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 			lineHeight[shortestLineIndex] += cellSize.height;
 		}
 		
-		NSUInteger longestLineIndex = _longestLine(lineHeight, _pinterestViewLineCount);
+		NSUInteger longestLineIndex = VEPinterestViewLongestLine(lineHeight, _pinterestViewLineCount);
 		sectionHeight = lineHeight[longestLineIndex];		
 	}	
 	
@@ -133,7 +133,7 @@ CGSize _fitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 	self.contentSize = contentSize;
 }
 
-- (void)_configureCell:(UIView *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(UIView *)cell atIndexPath:(NSIndexPath *)indexPath {
 		
 	cell.backgroundColor = [UIColor clearColor];
 	cell.clipsToBounds = YES;
@@ -150,7 +150,7 @@ CGSize _fitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 	[self.datasource pinterestView:self configureCell:cell atIndexPath:indexPath];
 }
 
-- (UIView *)_sectionHeaderViewAtSection:(NSUInteger)section {
+- (UIView *)sectionHeaderViewAtSection:(NSUInteger)section {
 	
 	CGFloat lineWidth = self.bounds.size.width / 3.0f;
 	CGFloat cellMargin = lineWidth * _pinterestViewCellMarginRatio;
@@ -199,7 +199,7 @@ CGSize _fitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 }
 
 #pragma mark - Selection Handler
-- (void)_didSelectCell:(UITapGestureRecognizer *)tapGestureRecognizer {
+- (void)didSelectCell:(UITapGestureRecognizer *)tapGestureRecognizer {
 	
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:tapGestureRecognizer.view.tag inSection:tapGestureRecognizer.view.superview.tag];
 	
@@ -208,7 +208,7 @@ CGSize _fitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 	}
 }
 
-- (void)_didLongPressCell:(UILongPressGestureRecognizer *)longPressGestureRecognizer {
+- (void)didLongPressCell:(UILongPressGestureRecognizer *)longPressGestureRecognizer {
 
 	if (longPressGestureRecognizer.state == UIGestureRecognizerStateBegan) {
 		NSIndexPath *indexPath = [NSIndexPath indexPathForRow:longPressGestureRecognizer.view.tag inSection:longPressGestureRecognizer.view.superview.tag];
@@ -221,7 +221,7 @@ CGSize _fitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 
 
 #pragma mark - 
-NSUInteger _shortestLine(CGFloat lineHeight[], NSUInteger lineCount) {
+NSUInteger VEPinterestViewShortestLine(CGFloat lineHeight[], NSUInteger lineCount) {
 	
 	NSUInteger index = 0;
 	
@@ -233,7 +233,7 @@ NSUInteger _shortestLine(CGFloat lineHeight[], NSUInteger lineCount) {
 	return index;
 }
 
-NSUInteger _longestLine(CGFloat lineHeight[], NSUInteger lineCount) {
+NSUInteger VEPinterestViewLongestLine(CGFloat lineHeight[], NSUInteger lineCount) {
 	
 	NSUInteger index = 0;
 	
@@ -245,7 +245,7 @@ NSUInteger _longestLine(CGFloat lineHeight[], NSUInteger lineCount) {
 	return index;
 }
 
-CGSize _fitCellSizeToLineWidth(CGSize size, CGFloat lineWidth) {
+CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth) {
 	
 	CGSize fitSize;
 	fitSize.width = lineWidth;
