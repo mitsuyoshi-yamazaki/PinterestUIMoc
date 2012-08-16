@@ -16,6 +16,8 @@
 		2C7E564A15DC7558005421D0 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7E564815DC7558005421D0 /* MainStoryboard_iPhone.storyboard */; };
 		2C7E564D15DC7558005421D0 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7E564B15DC7558005421D0 /* MainStoryboard_iPad.storyboard */; };
 		2C7E565015DC7558005421D0 /* VEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E564F15DC7558005421D0 /* VEViewController.m */; };
+		2C7E565915DC7764005421D0 /* VEPinterestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E565815DC7764005421D0 /* VEPinterestView.m */; };
+		2C7E565C15DC777C005421D0 /* VEPinterestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E565B15DC777C005421D0 /* VEPinterestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +25,20 @@
 		2C7E563615DC7558005421D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2C7E563815DC7558005421D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2C7E563A15DC7558005421D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2C7E563E15DC7558005421D0 /* PinterestUIMoc-Info.plist */ = {isa = PBXFileReference; path = "PinterestUIMoc-Info.plist"; sourceTree = "<group>"; };
+		2C7E563E15DC7558005421D0 /* PinterestUIMoc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PinterestUIMoc-Info.plist"; sourceTree = "<group>"; };
 		2C7E564015DC7558005421D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2C7E564215DC7558005421D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2C7E564415DC7558005421D0 /* PinterestUIMoc-Prefix.pch */ = {isa = PBXFileReference; path = "PinterestUIMoc-Prefix.pch"; sourceTree = "<group>"; };
-		2C7E564515DC7558005421D0 /* VEAppDelegate.h */ = {isa = PBXFileReference; path = VEAppDelegate.h; sourceTree = "<group>"; };
+		2C7E564415DC7558005421D0 /* PinterestUIMoc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PinterestUIMoc-Prefix.pch"; sourceTree = "<group>"; };
+		2C7E564515DC7558005421D0 /* VEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VEAppDelegate.h; sourceTree = "<group>"; };
 		2C7E564615DC7558005421D0 /* VEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VEAppDelegate.m; sourceTree = "<group>"; };
 		2C7E564915DC7558005421D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		2C7E564C15DC7558005421D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		2C7E564E15DC7558005421D0 /* VEViewController.h */ = {isa = PBXFileReference; path = VEViewController.h; sourceTree = "<group>"; };
+		2C7E564E15DC7558005421D0 /* VEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VEViewController.h; sourceTree = "<group>"; };
 		2C7E564F15DC7558005421D0 /* VEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VEViewController.m; sourceTree = "<group>"; };
+		2C7E565715DC7764005421D0 /* VEPinterestView.h */ = {isa = PBXFileReference; fileEncoding = 4; path = VEPinterestView.h; sourceTree = "<group>"; };
+		2C7E565815DC7764005421D0 /* VEPinterestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VEPinterestView.m; sourceTree = "<group>"; };
+		2C7E565A15DC777C005421D0 /* VEPinterestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = VEPinterestViewController.h; sourceTree = "<group>"; };
+		2C7E565B15DC777C005421D0 /* VEPinterestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VEPinterestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 				2C7E564B15DC7558005421D0 /* MainStoryboard_iPad.storyboard */,
 				2C7E564E15DC7558005421D0 /* VEViewController.h */,
 				2C7E564F15DC7558005421D0 /* VEViewController.m */,
+				2C7E565615DC757D005421D0 /* PinterestUI */,
 				2C7E563D15DC7558005421D0 /* Supporting Files */,
 			);
 			path = PinterestUIMoc;
@@ -99,6 +106,17 @@
 				2C7E564415DC7558005421D0 /* PinterestUIMoc-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2C7E565615DC757D005421D0 /* PinterestUI */ = {
+			isa = PBXGroup;
+			children = (
+				2C7E565715DC7764005421D0 /* VEPinterestView.h */,
+				2C7E565815DC7764005421D0 /* VEPinterestView.m */,
+				2C7E565A15DC777C005421D0 /* VEPinterestViewController.h */,
+				2C7E565B15DC777C005421D0 /* VEPinterestViewController.m */,
+			);
+			path = PinterestUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +186,8 @@
 				2C7E564315DC7558005421D0 /* main.m in Sources */,
 				2C7E564715DC7558005421D0 /* VEAppDelegate.m in Sources */,
 				2C7E565015DC7558005421D0 /* VEViewController.m in Sources */,
+				2C7E565915DC7764005421D0 /* VEPinterestView.m in Sources */,
+				2C7E565C15DC777C005421D0 /* VEPinterestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +307,7 @@
 				2C7E565515DC7558005421D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
