@@ -14,6 +14,8 @@
 
 @implementation VEPinterestViewController
 
+@synthesize pinterestView = _pinterestView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -21,6 +23,13 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [_pinterestView release], _pinterestView = nil;
+	
+    [super dealloc];
 }
 
 - (void)viewDidLoad
@@ -38,6 +47,41 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - UIScrollViewDelegate 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+	
+}
+
+#pragma mark - VEPinterestViewDelegate 
+- (void)pinterestView:(VEPinterestView *)pinterestView didSelectCellAtIndexPath:(NSIndexPath *)indexPath {
+	
+}
+
+- (void)pinterestView:(VEPinterestView *)pinterestView didLongPressCellAtIndexPath:(NSIndexPath *)indexPath {
+	
+}
+
+#pragma mark - VEPinterestViewDatasource 
+- (CGSize)sizeOfCellInPinterestView:(VEPinterestView *)pinterestView atIndexPath:(NSIndexPath *)indexPath {
+	
+}
+
+- (NSUInteger)numberOfSectionsInPinterestView:(VEPinterestView *)pinterestView {
+	
+}
+
+- (NSUInteger)numberOfCellsInPinterestView:(VEPinterestView *)pinterestView section:(NSUInteger)section {
+	
+}
+
+- (void)pinterestView:(VEPinterestView *)pinterestView configureCell:(UIView *)cell atIndexPath:(NSIndexPath *)indexPath {
+	
+}
+
+- (NSString *)titleForHeaderInSection:(NSUInteger)section {
+	
 }
 
 @end

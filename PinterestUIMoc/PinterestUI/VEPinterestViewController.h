@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VEPinterestViewController : UIViewController
+#import "VEPinterestView.h"
+
+@interface VEPinterestViewController : UIViewController <VEPinterestViewDelegate, VEPinterestViewDatasource>
+
+@property (nonatomic, readonly) VEPinterestView *pinterestView;
 
 @end

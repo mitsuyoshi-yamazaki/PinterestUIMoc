@@ -29,4 +29,7 @@
 
 @interface VEPinterestView : UIScrollView
 
+@property (nonatomic, assign) id <VEPinterestViewDelegate> delegate;
+@property (nonatomic, assign) id <VEPinterestViewDatasource> datasource;
+
 @end

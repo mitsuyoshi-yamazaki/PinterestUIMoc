@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VEPinterestViewController.h"
 
-@interface VEViewController : UIViewController
+@interface VEViewController : VEPinterestViewController
 
 @end
