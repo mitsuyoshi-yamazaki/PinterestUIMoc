@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C7E563715DC7558005421D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E563615DC7558005421D0 /* UIKit.framework */; };
+		2C7E563915DC7558005421D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E563815DC7558005421D0 /* Foundation.framework */; };
+		2C7E563B15DC7558005421D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E563A15DC7558005421D0 /* CoreGraphics.framework */; };
+		2C7E564115DC7558005421D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C7E563F15DC7558005421D0 /* InfoPlist.strings */; };
+		2C7E564315DC7558005421D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E564215DC7558005421D0 /* main.m */; };
+		2C7E564715DC7558005421D0 /* VEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E564615DC7558005421D0 /* VEAppDelegate.m */; };
+		2C7E564A15DC7558005421D0 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7E564815DC7558005421D0 /* MainStoryboard_iPhone.storyboard */; };
+		2C7E564D15DC7558005421D0 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7E564B15DC7558005421D0 /* MainStoryboard_iPad.storyboard */; };
+		2C7E565015DC7558005421D0 /* VEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E564F15DC7558005421D0 /* VEViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C7E563215DC7558005421D0 /* PinterestUIMoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinterestUIMoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C7E563615DC7558005421D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2C7E563815DC7558005421D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2C7E563A15DC7558005421D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2C7E563E15DC7558005421D0 /* PinterestUIMoc-Info.plist */ = {isa = PBXFileReference; path = "PinterestUIMoc-Info.plist"; sourceTree = "<group>"; };
+		2C7E564015DC7558005421D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2C7E564215DC7558005421D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C7E564415DC7558005421D0 /* PinterestUIMoc-Prefix.pch */ = {isa = PBXFileReference; path = "PinterestUIMoc-Prefix.pch"; sourceTree = "<group>"; };
+		2C7E564515DC7558005421D0 /* VEAppDelegate.h */ = {isa = PBXFileReference; path = VEAppDelegate.h; sourceTree = "<group>"; };
+		2C7E564615DC7558005421D0 /* VEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VEAppDelegate.m; sourceTree = "<group>"; };
+		2C7E564915DC7558005421D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		2C7E564C15DC7558005421D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		2C7E564E15DC7558005421D0 /* VEViewController.h */ = {isa = PBXFileReference; path = VEViewController.h; sourceTree = "<group>"; };
+		2C7E564F15DC7558005421D0 /* VEViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VEViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C7E562F15DC7558005421D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C7E563715DC7558005421D0 /* UIKit.framework in Frameworks */,
+				2C7E563915DC7558005421D0 /* Foundation.framework in Frameworks */,
+				2C7E563B15DC7558005421D0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C7E562715DC7558005421D0 = {
+			isa = PBXGroup;
+			children = (
+				2C7E563C15DC7558005421D0 /* PinterestUIMoc */,
+				2C7E563515DC7558005421D0 /* Frameworks */,
+				2C7E563315DC7558005421D0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2C7E563315DC7558005421D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C7E563215DC7558005421D0 /* PinterestUIMoc.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C7E563515DC7558005421D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C7E563615DC7558005421D0 /* UIKit.framework */,
+				2C7E563815DC7558005421D0 /* Foundation.framework */,
+				2C7E563A15DC7558005421D0 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C7E563C15DC7558005421D0 /* PinterestUIMoc */ = {
+			isa = PBXGroup;
+			children = (
+				2C7E564515DC7558005421D0 /* VEAppDelegate.h */,
+				2C7E564615DC7558005421D0 /* VEAppDelegate.m */,
+				2C7E564815DC7558005421D0 /* MainStoryboard_iPhone.storyboard */,
+				2C7E564B15DC7558005421D0 /* MainStoryboard_iPad.storyboard */,
+				2C7E564E15DC7558005421D0 /* VEViewController.h */,
+				2C7E564F15DC7558005421D0 /* VEViewController.m */,
+				2C7E563D15DC7558005421D0 /* Supporting Files */,
+			);
+			path = PinterestUIMoc;
+			sourceTree = "<group>";
+		};
+		2C7E563D15DC7558005421D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C7E563E15DC7558005421D0 /* PinterestUIMoc-Info.plist */,
+				2C7E563F15DC7558005421D0 /* InfoPlist.strings */,
+				2C7E564215DC7558005421D0 /* main.m */,
+				2C7E564415DC7558005421D0 /* PinterestUIMoc-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C7E563115DC7558005421D0 /* PinterestUIMoc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C7E565315DC7558005421D0 /* Build configuration list for PBXNativeTarget "PinterestUIMoc" */;
+			buildPhases = (
+				2C7E562E15DC7558005421D0 /* Sources */,
+				2C7E562F15DC7558005421D0 /* Frameworks */,
+				2C7E563015DC7558005421D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PinterestUIMoc;
+			productName = PinterestUIMoc;
+			productReference = 2C7E563215DC7558005421D0 /* PinterestUIMoc.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C7E562915DC7558005421D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VE;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 2C7E562C15DC7558005421D0 /* Build configuration list for PBXProject "PinterestUIMoc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2C7E562715DC7558005421D0;
+			productRefGroup = 2C7E563315DC7558005421D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C7E563115DC7558005421D0 /* PinterestUIMoc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C7E563015DC7558005421D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C7E564115DC7558005421D0 /* InfoPlist.strings in Resources */,
+				2C7E564A15DC7558005421D0 /* MainStoryboard_iPhone.storyboard in Resources */,
+				2C7E564D15DC7558005421D0 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C7E562E15DC7558005421D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C7E564315DC7558005421D0 /* main.m in Sources */,
+				2C7E564715DC7558005421D0 /* VEAppDelegate.m in Sources */,
+				2C7E565015DC7558005421D0 /* VEViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C7E563F15DC7558005421D0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C7E564015DC7558005421D0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2C7E564815DC7558005421D0 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C7E564915DC7558005421D0 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		2C7E564B15DC7558005421D0 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C7E564C15DC7558005421D0 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C7E565115DC7558005421D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C7E565215DC7558005421D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2C7E565415DC7558005421D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PinterestUIMoc/PinterestUIMoc-Prefix.pch";
+				INFOPLIST_FILE = "PinterestUIMoc/PinterestUIMoc-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2C7E565515DC7558005421D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PinterestUIMoc/PinterestUIMoc-Prefix.pch";
+				INFOPLIST_FILE = "PinterestUIMoc/PinterestUIMoc-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C7E562C15DC7558005421D0 /* Build configuration list for PBXProject "PinterestUIMoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C7E565115DC7558005421D0 /* Debug */,
+				2C7E565215DC7558005421D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C7E565315DC7558005421D0 /* Build configuration list for PBXNativeTarget "PinterestUIMoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C7E565415DC7558005421D0 /* Debug */,
+				2C7E565515DC7558005421D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C7E562915DC7558005421D0 /* Project object */;
+}
