@@ -24,12 +24,15 @@
 - (void)pinterestView:(VEPinterestView *)pinterestView configureCell:(UIView *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @optional
-- (NSString *)titleForHeaderInSection:(NSUInteger)section;
+- (NSString *)pinterestView:(VEPinterestView *)pinterestView titleForHeaderInSection:(NSUInteger)section;
 @end
 
-@interface VEPinterestView : UIScrollView
+@interface VEPinterestView : UIScrollView 
 
 @property (nonatomic, assign) id <VEPinterestViewDelegate> delegate;
 @property (nonatomic, assign) id <VEPinterestViewDatasource> datasource;
+@property (nonatomic, readonly) NSIndexPath *selectedIndexPath;
+
+- (void)reloadData;
 
 @end

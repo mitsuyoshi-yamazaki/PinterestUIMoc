@@ -35,7 +35,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+	if (_pinterestView == nil) {
+		
+		self.view.backgroundColor = [UIColor lightGrayColor];
+		
+		_pinterestView = [[VEPinterestView alloc] initWithFrame:self.view.bounds];
+		self.pinterestView.delegate = self;
+		self.pinterestView.datasource = self;
+		self.pinterestView.backgroundColor = [UIColor clearColor];
+		
+		[self.view addSubview:self.pinterestView];
+		
+		[self.pinterestView reloadData];
+	}
 }
 
 - (void)viewDidUnload
@@ -46,7 +59,11 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+		return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	} else {
+	    return YES;
+	}
 }
 
 #pragma mark - UIScrollViewDelegate 
@@ -54,6 +71,8 @@
 	
 }
 
+#pragma mark -
+#pragma mark - Following methods need override
 #pragma mark - VEPinterestViewDelegate 
 - (void)pinterestView:(VEPinterestView *)pinterestView didSelectCellAtIndexPath:(NSIndexPath *)indexPath {
 	
@@ -80,8 +99,8 @@
 	
 }
 
-- (NSString *)titleForHeaderInSection:(NSUInteger)section {
-	
+- (NSString *)pinterestView:(VEPinterestView *)pinterestView titleForHeaderInSection:(NSUInteger)section {
+	return nil;
 }
 
 @end
