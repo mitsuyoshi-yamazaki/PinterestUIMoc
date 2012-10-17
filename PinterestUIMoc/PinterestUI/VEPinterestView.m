@@ -139,11 +139,11 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 	cell.clipsToBounds = YES;
 	cell.layer.cornerRadius = _pinterestViewCellCornerRadius;
 	
-	UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_didSelectCell:)];
+	UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectCell:)];
 	[cell addGestureRecognizer:tapGestureRecognizer];
 	[tapGestureRecognizer release];
 	
-	UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(_didLongPressCell:)];
+	UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(didLongPressCell:)];
 	[cell addGestureRecognizer:longPressGestureRecognizer];
 	[longPressGestureRecognizer release];
 	
