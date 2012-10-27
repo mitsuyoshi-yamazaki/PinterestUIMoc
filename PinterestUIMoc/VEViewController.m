@@ -8,6 +8,8 @@
 
 #import "VEViewController.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @interface VEViewController ()
 
 @end
@@ -55,7 +57,14 @@
 
 - (void)pinterestView:(VEPinterestView *)pinterestView configureCell:(UIView *)cell atIndexPath:(NSIndexPath *)indexPath {
 	
-	cell.backgroundColor = [UIColor whiteColor];
+	cell.backgroundColor = [UIColor colorWithRed:0.9f green:0.7f blue:0.7f alpha:1.0f];
+	
+//	cell.clipsToBounds = YES;
+	cell.layer.cornerRadius = 5.0f;
+	cell.layer.shadowColor = [UIColor blackColor].CGColor;//[UIColor colorWithRed:0.8f green:0.5f blue:0.5f alpha:1.0f].CGColor;
+	cell.layer.shadowRadius = 1.0f;
+	cell.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
+	cell.layer.shadowOpacity = 0.5f;
 }
 
 - (NSString *)pinterestView:(VEPinterestView *)pinterestView titleForHeaderInSection:(NSUInteger)section {

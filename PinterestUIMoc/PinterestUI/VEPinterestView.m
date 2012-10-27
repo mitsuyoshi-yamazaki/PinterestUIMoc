@@ -7,7 +7,7 @@
 //
 
 #import "VEPinterestView.h"
-#import <QuartzCore/QuartzCore.h>
+//#import <QuartzCore/QuartzCore.h>
 
 CGFloat const _pinterestViewCellMarginRatio = 0.03f; // ratio of line width to margin
 CGFloat const _pinterestViewCellMinimumHeightRatio = 0.8f; // ratio of line width to minimum cell height
@@ -125,9 +125,9 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 			cellRect.size.height -= 2.0f;
 			
 			UIView *cellBackgroundView = [[UIView alloc] initWithFrame:cellBackgroundRect];
-			cellBackgroundView.backgroundColor = [UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:0.2f];
-			cellBackgroundView.clipsToBounds = YES;
-			cellBackgroundView.layer.cornerRadius = _pinterestViewCellCornerRadius + 1.0f;
+			cellBackgroundView.backgroundColor = [UIColor clearColor];
+//			cellBackgroundView.clipsToBounds = YES;
+//			cellBackgroundView.layer.cornerRadius = _pinterestViewCellCornerRadius + 1.0f;
 			cellBackgroundView.tag = indexPath.section;
 			
 			UIView *cell = [[UIView alloc] initWithFrame:cellRect];
@@ -154,11 +154,7 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 }
 
 - (void)configureCell:(UIView *)cell atIndexPath:(NSIndexPath *)indexPath {
-		
-	cell.backgroundColor = [UIColor clearColor];
-	cell.clipsToBounds = YES;
-	cell.layer.cornerRadius = _pinterestViewCellCornerRadius;
-	
+			
 	UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectCell:)];
 	[cell addGestureRecognizer:tapGestureRecognizer];
 	[tapGestureRecognizer release];
@@ -210,7 +206,7 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 	[headerView addSubview:titleLabel];
 	[titleLabel release];
 	
-	headerView.layer.cornerRadius = 10.0f;
+//	headerView.layer.cornerRadius = 10.0f;
 	headerRect.size.height = 30.0f;
 	titleLabel.hidden = NO;
 	
