@@ -84,15 +84,15 @@
 
 #pragma mark - VEPinterestViewDatasource 
 - (CGSize)sizeOfCellInPinterestView:(VEPinterestView *)pinterestView atIndexPath:(NSIndexPath *)indexPath {
-	
+	return CGSizeZero;
 }
 
 - (NSUInteger)numberOfSectionsInPinterestView:(VEPinterestView *)pinterestView {
-	
+	return 0;
 }
 
 - (NSUInteger)numberOfCellsInPinterestView:(VEPinterestView *)pinterestView section:(NSUInteger)section {
-	
+	return 0;
 }
 
 - (void)pinterestView:(VEPinterestView *)pinterestView configureCell:(UIView *)cell atIndexPath:(NSIndexPath *)indexPath {
