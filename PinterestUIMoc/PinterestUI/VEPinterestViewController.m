@@ -38,12 +38,13 @@
 
 	if (_pinterestView == nil) {
 		
-		self.view.backgroundColor = [UIColor lightGrayColor];
+		self.view.autoresizesSubviews = YES;
 		
 		_pinterestView = [[VEPinterestView alloc] initWithFrame:self.view.bounds];
 		self.pinterestView.delegate = self;
 		self.pinterestView.datasource = self;
 		self.pinterestView.backgroundColor = [UIColor clearColor];
+		self.pinterestView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 		
 		[self.view addSubview:self.pinterestView];
 		
@@ -54,7 +55,8 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
+
+    [_pinterestView release], _pinterestView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
