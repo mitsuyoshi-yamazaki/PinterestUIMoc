@@ -65,11 +65,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-		return (interfaceOrientation == UIInterfaceOrientationPortrait);
-	} else {
-	    return YES;
-	}
+	return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
 #pragma mark - UIScrollViewDelegate 
