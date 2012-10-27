@@ -203,6 +203,9 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 	
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:tapGestureRecognizer.view.tag inSection:tapGestureRecognizer.view.superview.tag];
 	
+	[_selectedIndexPath release], _selectedIndexPath = nil;
+	_selectedIndexPath = [indexPath retain];
+	
 	if ([self.delegate respondsToSelector:@selector(pinterestView:didSelectCellAtIndexPath:)]) {
 		[self.delegate pinterestView:self didSelectCellAtIndexPath:indexPath];
 	}
@@ -213,6 +216,9 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 	if (longPressGestureRecognizer.state == UIGestureRecognizerStateBegan) {
 		NSIndexPath *indexPath = [NSIndexPath indexPathForRow:longPressGestureRecognizer.view.tag inSection:longPressGestureRecognizer.view.superview.tag];
 		
+		[_selectedIndexPath release], _selectedIndexPath = nil;
+		_selectedIndexPath = [indexPath retain];
+
 		if ([self.delegate respondsToSelector:@selector(pinterestView:didLongPressCellAtIndexPath:)]) {
 			[self.delegate pinterestView:self didLongPressCellAtIndexPath:indexPath];
 		}
