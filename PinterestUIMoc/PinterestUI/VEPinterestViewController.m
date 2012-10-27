@@ -46,10 +46,14 @@
 		self.pinterestView.backgroundColor = [UIColor clearColor];
 		self.pinterestView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 		
-		[self.view addSubview:self.pinterestView];
-		
-		[self.pinterestView reloadData];
+		[self.view addSubview:self.pinterestView];		
 	}
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	[self.pinterestView reloadData];
 }
 
 - (void)viewDidUnload
