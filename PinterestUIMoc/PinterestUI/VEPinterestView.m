@@ -9,11 +9,11 @@
 #import "VEPinterestView.h"
 #import <QuartzCore/QuartzCore.h>
 
-static CGFloat const _pinterestViewCellMarginRatio = 0.03f; // ratio of line width to margin
-static CGFloat const _pinterestViewCellMinimumHeightRatio = 0.8f; // ratio of line width to minimum cell height
-static CGFloat const _pinterestViewCellCornerRadius = 5.0f;
-static NSUInteger const _pinterestViewDefaultLineCount = 3;
-static NSInteger const _pinterestViewTagHeaderView = -1;
+CGFloat const _pinterestViewCellMarginRatio = 0.03f; // ratio of line width to margin
+CGFloat const _pinterestViewCellMinimumHeightRatio = 0.8f; // ratio of line width to minimum cell height
+CGFloat const _pinterestViewCellCornerRadius = 5.0f;
+NSUInteger const _pinterestViewDefaultLineCount = 3;
+NSInteger const _pinterestViewTagHeaderView = -1;
 
 @interface VEPinterestView ()
 - (void)initializePinterestView;
