@@ -61,6 +61,10 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 		[NSException raise:@"もんだいがおきましたほげ" format:@"でーたそーすがないよ"];
 	}
 	
+	for (UIView *aSubview in self.subviews) {
+		[aSubview removeFromSuperview];
+	}
+	
 	NSUInteger sectionCount = [self.datasource numberOfSectionsInPinterestView:self];
 	CGFloat sectionHeight = 0.0f;
 	CGFloat lineWidth = self.bounds.size.width / 3.0f;
@@ -70,13 +74,15 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 	
 		UIView *sectionHeaderView = [self sectionHeaderViewAtSection:section];
 		
-		CGRect headerViewRect = sectionHeaderView.frame;
-		headerViewRect.origin.y += sectionHeight;
-		[sectionHeaderView setFrame:headerViewRect];
-		
-		[self addSubview:sectionHeaderView];
-		
-		sectionHeight += headerViewRect.size.height + cellMargin * 2.0f;
+		if (sectionHeaderView) {
+			CGRect headerViewRect = sectionHeaderView.frame;
+			headerViewRect.origin.y += sectionHeight;
+			[sectionHeaderView setFrame:headerViewRect];
+			
+			[self addSubview:sectionHeaderView];
+			
+			sectionHeight += headerViewRect.size.height + cellMargin * 2.0f;
+		}
 		
 		NSUInteger cellCount = [self.datasource numberOfCellsInPinterestView:self section:section];
 		CGFloat lineHeight[_pinterestViewLineCount];
@@ -151,7 +157,17 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 }
 
 - (UIView *)sectionHeaderViewAtSection:(NSUInteger)section {
+		
+	NSString *headerTitle = nil;
 	
+	if ([self.datasource respondsToSelector:@selector(pinterestView:titleForHeaderInSection:)]) {
+		headerTitle = [self.datasource pinterestView:self titleForHeaderInSection:section];
+	}
+
+	if (headerTitle == nil) {
+		return nil;
+	}
+
 	CGFloat lineWidth = self.bounds.size.width / 3.0f;
 	CGFloat cellMargin = lineWidth * _pinterestViewCellMarginRatio;
 	
@@ -175,23 +191,14 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 	titleLabel.textAlignment = UITextAlignmentCenter;
 	titleLabel.textColor = [UIColor whiteColor];
 	
+	titleLabel.text = headerTitle;
+	
 	[headerView addSubview:titleLabel];
 	[titleLabel release];
 	
-	if ([self.datasource respondsToSelector:@selector(pinterestView:titleForHeaderInSection:)]) {
-		titleLabel.text = [self.datasource pinterestView:self titleForHeaderInSection:section];
-	}
-	
-	if (titleLabel.text.length) {
-		headerView.layer.cornerRadius = 10.0f;
-		headerRect.size.height = 30.0f;
-		titleLabel.hidden = NO;
-	}
-	else {
-		headerView.layer.cornerRadius = 5.0f;
-		headerRect.size.height = 10.0f;
-		titleLabel.hidden = YES;
-	}
+	headerView.layer.cornerRadius = 10.0f;
+	headerRect.size.height = 30.0f;
+	titleLabel.hidden = NO;
 	
 	[headerView setFrame:headerRect];
 	
