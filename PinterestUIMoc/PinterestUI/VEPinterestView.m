@@ -12,7 +12,7 @@
 static CGFloat const _pinterestViewCellMarginRatio = 0.03f; // ratio of line width to margin
 static CGFloat const _pinterestViewCellMinimumHeightRatio = 0.8f; // ratio of line width to minimum cell height
 static CGFloat const _pinterestViewCellCornerRadius = 5.0f;
-static NSUInteger const _pinterestViewLineCount = 3;
+static NSUInteger const _pinterestViewDefaultLineCount = 3;
 static NSInteger const _pinterestViewTagHeaderView = -1;
 
 @interface VEPinterestView ()
@@ -32,7 +32,20 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 @synthesize delegate;
 @synthesize datasource;
 @synthesize selectedIndexPath = _selectedIndexPath;
+@synthesize lineCount = _lineCount;
 
+#pragma mark - Accessor
+- (void)setLineCount:(NSUInteger)newValue {
+	
+	if (newValue == 0) {
+		return;
+	}
+	
+	_lineCount = newValue;
+	[self reloadData];
+}
+
+#pragma mark - Lifecycle
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -45,6 +58,7 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 - (void)initializePinterestView {
 	
 	_selectedIndexPath = nil;
+	_lineCount = _pinterestViewDefaultLineCount;
 }
 
 - (void)dealloc
@@ -67,7 +81,7 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 	
 	NSUInteger sectionCount = [self.datasource numberOfSectionsInPinterestView:self];
 	CGFloat sectionHeight = 0.0f;
-	CGFloat lineWidth = self.bounds.size.width / 3.0f;
+	CGFloat lineWidth = self.bounds.size.width / (CGFloat)self.lineCount;
 	CGFloat cellMargin = lineWidth * _pinterestViewCellMarginRatio;
 
 	for (NSUInteger section = 0; section < sectionCount; section++) {
@@ -85,9 +99,9 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 		}
 		
 		NSUInteger cellCount = [self.datasource numberOfCellsInPinterestView:self section:section];
-		CGFloat lineHeight[_pinterestViewLineCount];
+		CGFloat lineHeight[self.lineCount];
 		
-		for (NSUInteger lineIndex = 0; lineIndex < _pinterestViewLineCount; lineIndex++) {
+		for (NSUInteger lineIndex = 0; lineIndex < self.lineCount; lineIndex++) {
 			lineHeight[lineIndex] = sectionHeight;
 		}
 
@@ -97,7 +111,7 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 			CGSize cellSize = [self.datasource sizeOfCellInPinterestView:self atIndexPath:indexPath];
 			cellSize = VEPinterestViewFitCellSizeToLineWidth(cellSize, lineWidth);
 			
-			NSUInteger shortestLineIndex = VEPinterestViewShortestLine(lineHeight, _pinterestViewLineCount);
+			NSUInteger shortestLineIndex = VEPinterestViewShortestLine(lineHeight, self.lineCount);
 				
 			CGRect cellBackgroundRect;
 			cellBackgroundRect.origin.x = shortestLineIndex * lineWidth + cellMargin - 1.0f;
@@ -130,7 +144,7 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 			lineHeight[shortestLineIndex] += cellSize.height;
 		}
 		
-		NSUInteger longestLineIndex = VEPinterestViewLongestLine(lineHeight, _pinterestViewLineCount);
+		NSUInteger longestLineIndex = VEPinterestViewLongestLine(lineHeight, self.lineCount);
 		sectionHeight = lineHeight[longestLineIndex];		
 	}	
 	

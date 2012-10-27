@@ -33,6 +33,8 @@
 @property (nonatomic, assign) id <VEPinterestViewDatasource> datasource;
 @property (nonatomic, readonly) NSIndexPath *selectedIndexPath;
 
+@property (nonatomic) NSUInteger lineCount;
+
 - (void)reloadData;
 
 @end
