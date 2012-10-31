@@ -75,7 +75,7 @@ CGSize VEPinterestViewFitCellSizeToLineWidth(CGSize size, CGFloat lineWidth);
 		[NSException raise:@"もんだいがおきましたほげ" format:@"でーたそーすがないよ"];
 	}
 	
-	for (UIView *aSubview in self.subviews.reverseObjectEnumerator) {
+	for (UIView *aSubview in [self.subviews reverseObjectEnumerator]) {
 		[aSubview removeFromSuperview];
 	}
 	
